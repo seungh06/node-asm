@@ -1,0 +1,46 @@
+{
+    "name": "node-asm",
+    "version": "1.0.4",
+    "description": "Read and write process memory, access process modules and procedures for node.js",
+    "main": "dist/asm.js",
+    "types": "dist/asm.d.ts",
+    "exports": {
+        ".": "./dist/asm.js",
+        "./header": "./dist/win32/header.js"
+    },
+    "typesVersions": {
+        "*": {
+            "header": [ "dist/win32/header" ]
+        }
+    },
+    "author": "seungh06 <delspace0011@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "test": "tsc && node dist/test.js",
+
+        "build": "tsc && node dist/build.js",
+        "build32": "node-gyp clean configure build --arch=ia32",
+        "build64": "node-gyp clean configure build --arch=x64"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/seungh06/node-asm.git"
+    },
+    "homepage": "https://github.com/seungh06/node-asm",
+    "bugs": "https://github.com/seungh06/node-asm/issues",
+    "keywords": [
+        "process",
+        "module",
+        "memory",
+        "procedure",
+        "pointer",
+        "binary",
+        "shellcode",
+        "cpp"
+    ],
+    "devDependencies": {
+        "@types/node": "^18.13.0",
+        "node-addon-api": "^5.1.0"
+    },
+    "gypfile": true
+}
