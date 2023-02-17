@@ -30,8 +30,13 @@ Node-asm internally uses C++ native modules through [**Node Addon API**](https:/
 
 ⭐ So you can use **node-asm** normally without installing **Node Addon API** and **Node-gyp**. but if you want to modify or rebuild node-asm package, the above modules are required.
 
-## 📝 Usage
+## 🤝 Import
+Node-asm supports **Windows** and **Linux** versions.
 
+You can import ***Windows*** version **node-asm** module using the `node-asm` and `node-asm/win32` paths, and you can import the ***Linux*** version module using the `node-asm/linux` path.
+> ⛔ The **Linux** version is still in development and not stable supported.
+
+## 📝 Usage
 - ### 🕹️ Process
 ``` typescript
  const processes: Array<process> = load_processes(); 
@@ -137,6 +142,6 @@ Node-asm internally uses C++ native modules through [**Node Addon API**](https:/
 Node-asm implements the **Windows PE headers** to execute tasks such as **load_procedures** and **load_sections**. Also users can use exported implementations in `node-asm/header` path.
 
 Headers with architecture-dependent structures such as `image_nt_headers` and `image_optional_headers` support functions that return appropriate structures depending on the **target process**.
-> See more kinds and properties of header [here](/src/win32).
+> See more kinds and properties of header [here](/src/win32/header).
 ## 📋 License
 Distributed under the MIT License. See ```LICENSE``` for more information.
