@@ -1,4 +1,4 @@
-import { process, asm, read_memory } from '../asm'
+import { process, asm, read_memory } from '../lib'
 
 export class image_import_descriptor {
         constructor(private readonly process: process, private readonly base: number) { }

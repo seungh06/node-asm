@@ -1,4 +1,4 @@
-import { process, asm, read_memory, is_x86 }                from '../asm'
+import { process, asm, read_memory, is_x86 }                from '../lib'
 import { image_file_header }                                from './image_file_header'
 import { image_optional_header32, image_optional_header64 } from './image_optional_header'
 

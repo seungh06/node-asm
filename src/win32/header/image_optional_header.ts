@@ -1,4 +1,4 @@
-import { process, asm, read_memory, is_x86 } from '../asm'
+import { process, asm, read_memory, is_x86 } from '../lib'
 import { image_data_directory }              from './image_data_directory'
 
 export const IMAGE_NUMBEROF_DIRECTORY_ENTRIES = 16;

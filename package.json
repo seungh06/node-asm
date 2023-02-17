@@ -2,15 +2,17 @@
     "name": "node-asm",
     "version": "1.0.4",
     "description": "Read and write process memory, access process modules and procedures for node.js",
-    "main": "dist/asm.js",
-    "types": "dist/asm.d.ts",
+    "main": "dist/win32/lib.js",
+    "types": "dist/win32/lib.d.ts",
     "exports": {
-        ".": "./dist/asm.js",
-        "./header": "./dist/win32/header.js"
+        ".": "./dist/win32/lib.js",
+        "./header": "./dist/win32/header.js",
+        "./linux": "./dist/linux/lib.js"
     },
     "typesVersions": {
         "*": {
-            "header": [ "dist/win32/header" ]
+            "header": [ "dist/win32/header" ],
+            "lib": [ "dist/linux/lib" ]
         }
     },
     "author": "seungh06 <delspace0011@gmail.com>",

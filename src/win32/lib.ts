@@ -1,8 +1,8 @@
 import process from 'node:process'
 import path from 'node:path'
-import { image_dos_header, image_nt_headers, image_export_directory, image_section_header } from './win32/header'
+import { image_dos_header, image_nt_headers, image_export_directory, image_section_header } from './header'
 
-export const _native_asm = require(['arm64', 'ppc64', 'x64', 's390x'].includes(process.arch) ? '../build/asm-x64' : '../build/asm-x86');
+export const _native_asm = require(path.resolve('.', `bin/asm-win-${ ['arm64', 'ppc64', 'x64', 's390x'].includes(process.arch) ? 'x64' : 'x86' }`));
 export const dump = (address: number) => process.stdout.write(`0x${ address.toString(16).toUpperCase() }\n`);
 
 export type handle = /* HANDLE POINTER */ number;
