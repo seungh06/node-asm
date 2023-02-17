@@ -3,7 +3,7 @@ import path from 'node:path'
 import subprocess from 'node:child_process'
 import fstream from 'node:fs'
 
-//export const _native_asm = require(path.resolve('.', `bin/asm-linux-${ ['arm64', 'ppc64', 'x64', 's390x'].includes(process.arch) ? 'x64' : 'x86' }`));
+export const _native_asm = require(path.resolve('.', `bin/asm-linux-${ ['arm64', 'ppc64', 'x64', 's390x'].includes(process.arch) ? 'x64' : 'x86' }`));
 export const dump = (address: number) => process.stdout.write(`0x${ address.toString(16).toUpperCase() }\n`);
 export const invalid_handle: handle = -1;
 

@@ -11,7 +11,9 @@
                     "sources": [ "lib/asm.cc", "lib/process.cc", "lib/module.cc", "lib/memory.cc", "lib/procedure.cc" ]
                 }],
                 
-                ['OS != "win"', {}],
+                ['OS != "win"', {
+                    "sources": [ "lib/asm-linux.cc" ]
+                }],
             ]
         }
     ]
