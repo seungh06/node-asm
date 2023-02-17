@@ -7,12 +7,14 @@
     "exports": {
         ".": "./dist/win32/lib.js",
         "./header": "./dist/win32/header.js",
-        "./linux": "./dist/linux/lib.js"
+
+        "./win32": "./dist/win32/lib.js", "./linux": "./dist/linux/lib.js"
     },
     "typesVersions": {
         "*": {
             "header": [ "dist/win32/header" ],
-            "lib": [ "dist/linux/lib" ]
+
+            "win32": [ "dist/win32/lib" ], "linux": [ "dist/linux/lib" ]
         }
     },
     "author": "seungh06 <delspace0011@gmail.com>",
