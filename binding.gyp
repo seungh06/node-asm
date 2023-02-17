@@ -8,11 +8,19 @@
             "defines": [ 'NAPI_DISABLE_CPP_EXCEPTIONS' ],
             "conditions": [
                 ['OS == "win"', {
-                    "sources": [ "lib/asm.cc", "lib/process.cc", "lib/module.cc", "lib/memory.cc", "lib/procedure.cc" ]
+                    "sources": [ 
+                        "lib/asm.cc",
+                        "lib/process.cc",
+                        "lib/module.cc",
+                        "lib/memory.cc",
+                        "lib/procedure.cc" 
+                    ]
                 }],
                 
                 ['OS != "win"', {
-                    "sources": [ "lib/asm-linux.cc" ]
+                    "sources": [ 
+                        "lib/linux/asm-linux.cc"
+                    ]
                 }],
             ]
         }
