@@ -28,7 +28,7 @@
 ## 📌 About Node Addon
 Node-asm internally uses C++ native modules through [**Node Addon API**](https://github.com/nodejs/node-addon-api) and [**Node-gyp**](https://github.com/nodejs/node-gyp), but distributed package include binary files that compiled for x86 and x64 architectures and depending on the **process environment** of NodeJS, the binary file of the appropriate architecture is used.
 
-So you can use **node-asm** normally without installing **Node Addon API** and **Node-gyp**. but if you want to modify or rebuild node-asm package, the above modules are required.
+⭐ So you can use **node-asm** normally without installing **Node Addon API** and **Node-gyp**. but if you want to modify or rebuild node-asm package, the above modules are required.
 
 ## 📝 Usage
 
@@ -77,7 +77,7 @@ So you can use **node-asm** normally without installing **Node Addon API** and *
 ```
 
 ```typescript
- // function get_pointer_address(process: process, base_address: number, ...offsets: Array<number>): number
+ // function get_pointer_address(process: process, base_address: number, ...offsets: Array<number>)
  
  const output: number = get_pointer_address(process, module.address + 0x032A5328, 0x198, 0x2D0, 0x2F8);
 ```
@@ -87,7 +87,7 @@ So you can use **node-asm** normally without installing **Node Addon API** and *
  const extra = 0x4, offset = 0x3;
  
  const output: number = aob_scan(process, signature, extra, offset); // scan all modules.
- const output: number = aob_scan_module(process, module, signature, extra, offset); // scan specific module.
+ const output: number = aob_scan_module(process, module, signature, extra, offset);
 ```
 
 ```typescript
@@ -105,7 +105,7 @@ So you can use **node-asm** normally without installing **Node Addon API** and *
 - ### 🔌 Procedure
 ``` typescript
  const procedures: Array<procedure> = load_procedures(process, module);
- const procedure: procedure = find_procedure(process, module, 'MessageBoxA'); // Find 'MessageBoxA' procedure in the module.
+ const procedure: procedure = find_procedure(process, module, 'MessageBoxA');
 ```
 
 ``` typescript
