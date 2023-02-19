@@ -161,6 +161,26 @@ Napi::Value EXPORT_WRITE_MEMORY(const Napi::CallbackInfo& arguments) {
         return environment.Null();
 }
 
+Napi::Value EXPORT_GET_POINTER_ADDRESS(const Napi::CallbackInfo& arguments) {
+        Napi::Env environment = arguments.Env();
+
+        uint32_t    process_id   = arguments.operator[](0).As<Napi::Number>().Uint32Value();
+        void *      base_address = (void *) arguments.operator[](1).As<Napi::Number>().Int64Value();
+        Napi::Array offsets      = arguments.operator[](2).As<Napi::Array>();
+        
+        uintptr_t address;
+        address = read_memory<size_t>(process_id, base_address);
+
+        for(unsigned int index = 0; index < offsets.Length(); index ++) {
+                address += offsets.Get(index).As<Napi::Number>().Int32Value();
+                if(index != offsets.Length() - 1) {
+                        address = read_memory<size_t>(process_id, (void *) address);
+                }
+        }
+
+        return Napi::Number::New(environment, address);
+}
+
 Napi::Object InitLibrary(Napi::Env environment, Napi::Object exports) {
         
         exports.Set(Napi::String::New(environment, "read_memory") , Napi::Function::New(environment, EXPORT_READ_MEMORY ));
