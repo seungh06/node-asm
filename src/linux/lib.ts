@@ -74,3 +74,22 @@ export function find_module(process: process, target_module: string) {
         
         return module;
 }
+
+export enum asm {
+        int8  = 'int8' , int16  = 'int16' , int32  = 'int32' , int64  = 'int64' ,
+        uint8 = 'uint8', uint16 = 'uint16', uint32 = 'uint32', uint64 = 'uint64',
+        bool  = 'bool' , float  = 'float' , double = 'double', string = 'string'
+}
+
+export function read_memory<T = any>(process: process, address: number, type: asm): T {
+        return _native_asm.read_memory(process.handle, address, type);
+}
+
+export function write_memory<T = any>(process: process, address: number, value: T, type: asm): void {
+        if([ asm.int64, asm.uint64 ].includes(type) && typeof value !== 'bigint') {
+                throw new Error(`value of data type 'int64' or 'uint64' must be 'bigint'.`);
+        }
+        
+        if(type === asm.string) (<string> value) += '\0'
+        return _native_asm.write_memory(process.handle, address, value, type);
+}
