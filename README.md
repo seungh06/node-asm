@@ -33,8 +33,10 @@ Node-asm internally uses C++ native modules through [**Node Addon API**](https:/
 ## 🤝 Import
 Node-asm supports **Windows** and **Linux** versions.
 
-You can import ***Windows*** version **node-asm** module using the `node-asm` and `node-asm/win32` paths, and you can import the ***Linux*** version module using the `node-asm/linux` path.
-> ⛔ The **Linux** version is still in development and not stable. **(not recommended.)**
+You can import the ***Windows*** version **node-asm** module using `node-asm` and `node-asm/win32` paths, and you can import the ***Linux*** version module using the `node-asm/linux` path.
+
+> **Warning**  
+> The **Linux** version is still in development and not stable. **(not recommended.)**
 
 ## 📝 Usage
 - ### 🕹️ Process
@@ -104,6 +106,7 @@ You can import ***Windows*** version **node-asm** module using the `node-asm` an
  asm.int8, asm.int16, asm.int32, asm.int64, asm.uint8, asm.uint16, asm.uint32, asm.uint64
  asm.bool, asm.float, asm.double, asm.string,
  
+ // Windows
  asm.BYTE = asm.uint8, asm.WORD = asm.uint16, asm.DWORD = asm.uint32, asm.QWORD = asm.uint64
 ```
 
