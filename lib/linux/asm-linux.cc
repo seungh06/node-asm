@@ -183,9 +183,9 @@ Napi::Value EXPORT_GET_POINTER_ADDRESS(const Napi::CallbackInfo& arguments) {
 
 Napi::Object InitLibrary(Napi::Env environment, Napi::Object exports) {
         
-        exports.Set(Napi::String::New(environment, "read_memory") , Napi::Function::New(environment, EXPORT_READ_MEMORY ));
-        exports.Set(Napi::String::New(environment, "write_memory"), Napi::Function::New(environment, EXPORT_WRITE_MEMORY));
-
+        exports.Set(Napi::String::New(environment, "read_memory")        , Napi::Function::New(environment, EXPORT_READ_MEMORY        ));
+        exports.Set(Napi::String::New(environment, "write_memory")       , Napi::Function::New(environment, EXPORT_WRITE_MEMORY       ));
+        exports.Set(Napi::String::New(environment, "get_pointer_address"), Napi::Function::New(environment, EXPORT_GET_POINTER_ADDRESS));
         return exports;
 }
 
