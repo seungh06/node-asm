@@ -93,3 +93,7 @@ export function write_memory<T = any>(process: process, address: number, value: 
         if(type === asm.string) (<string> value) += '\0'
         return _native_asm.write_memory(process.handle, address, value, type);
 }
+
+export function get_pointer_address(process: process, address: number, ...offsets: Array<number>): number {
+        return _native_asm.get_pointer_address(process.handle, address, offsets);
+}

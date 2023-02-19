@@ -84,7 +84,7 @@ You can import the ***Windows*** version **node-asm** module using `node-asm` an
 ```
 
 ```typescript
- // function get_pointer_address(process: process, base_address: number, ...offsets: Array<number>)
+ // function get_pointer_address(process: process, address: number, ...offsets: Array<number>)
  
  const output: number = get_pointer_address(process, module.address + 0x032A5328, 0x198, 0x2D0, 0x2F8);
 ```

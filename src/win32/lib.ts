@@ -84,8 +84,8 @@ export function write_memory<T = any>(process: process, address: number, value: 
         return _native_asm.write_memory(process.handle, address, value, type);
 }
 
-export function get_pointer_address(process: process, base_address: number, ...offsets: Array<number>): number {
-        return _native_asm.get_pointer_address(process.handle, base_address, offsets);
+export function get_pointer_address(process: process, address: number, ...offsets: Array<number>): number {
+        return _native_asm.get_pointer_address(process.handle, address, offsets);
 }
 
 export function aob_scan(process: process, signature: string, offset: number = 0x0, extra: number = 0x0): number {
