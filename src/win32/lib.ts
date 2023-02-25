@@ -41,7 +41,7 @@ export function load_modules(process: process): Array<module> {
 }
 
 export function find_module(process: process, target_module: string): module {
-        const module = load_modules(process).find(module => module.name.toLowerCase() === target_module);
+        const module = load_modules(process).find(module => module.name.toLowerCase() === target_module.toLowerCase());
         if(!module) throw new Error(`cannot find module '${ target_module }' in process '${ process.exe }'.`);
         
         return module;
